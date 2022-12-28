@@ -5,11 +5,13 @@ import java.util.HashMap;
 public class q3 {
     //    无字符的最长子串
     public static void main(String[] args) {
-        new Solution3().lengthOfLongestSubstring("asdasds");
+        System.out.println(new Solution3().lengthOfLongestSubstring("asdasds"));
+
     }
 }
 
 class Solution3 {
+//    采用的是什么滑动窗口策略
     public int lengthOfLongestSubstring(String s) {
         if (s.length() == 0) return 0;
         HashMap<Character, Integer> map = new HashMap<>();
