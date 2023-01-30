@@ -1,6 +1,5 @@
 package day1;
 
-import javax.tools.ForwardingFileObject;
 
 /**
  * @author 陈佳乐
@@ -18,7 +17,7 @@ class Solution5 {
     //第一种方法，遍历整个字符串，分为奇数，偶数情况，他们都有可能是回文串的中心，由中心向两边寻找
 //    直到不是回文串，每次保留最长的回文串。这种方法也可以称之为中心扩散法，
     public String longestPalindrome(String s) {
-        String res = "";
+        String res  = "";
         int i = 0;
         while (i >= 0 && i < s.length()) {
             String s1 = findHuiWen(s, i, i);
