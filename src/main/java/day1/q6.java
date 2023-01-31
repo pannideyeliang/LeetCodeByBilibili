@@ -30,7 +30,7 @@ class Solution6 {
                 res.get(index).append(chars[leng]);
                 index++;
                 leng++;
-                if (leng == chars.length){
+                if (leng == chars.length) {
                     break;
                 }
                 if (index == numRows) {
@@ -43,7 +43,7 @@ class Solution6 {
                 res.get(index).append(chars[leng]);
                 index--;
                 leng++;
-                if (leng == chars.length){
+                if (leng == chars.length) {
                     break;
                 }
                 if (index == -1) {
@@ -59,5 +59,21 @@ class Solution6 {
         }
 
         return rs.toString();
+    }
+
+    //使用优化后的方法，思路和上述方法一致
+    public String convertV2(String s, int numRows) {
+        if (numRows < 2) return s;
+        ArrayList<StringBuilder> rows = new ArrayList<>();
+        for (int i = 0; i < numRows; i++) rows.add(new StringBuilder());
+        int i = 0, flag = -1;
+        for (char c : s.toCharArray()) {
+            rows.get(i).append(c);
+            if (i == 0 || i == numRows - 1) flag = -flag;
+            i += flag;
+        }
+        StringBuilder res = new StringBuilder();
+        for (StringBuilder row : rows) res.append(row);
+        return res.toString();
     }
 }
