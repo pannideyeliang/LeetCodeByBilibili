@@ -1,5 +1,6 @@
 package day1;
 
+
 /**
  * @author 陈佳乐
  * @create 2023-02-03-14:41
@@ -8,7 +9,7 @@ public class q9 {
 
     //    9. 回文数
     public static void main(String[] args) {
-        System.out.println(new Solution9().isPalindrome(12321));
+        System.out.println(new Solution9().isPalindromeV3(121));
     }
 }
 
@@ -28,7 +29,44 @@ class Solution9 {
         char[] chars = Integer.toString(x).toCharArray();
         if (chars[0] == '-' || chars[0] == '+') return false;
         int left, right;
+        int length = chars.length;
+        boolean flag = true;
+        if (length % 2 == 0) {
+            right = length / 2;
+            left = length / 2 - 1;
+            while (left >= 0 && right <= length - 1) {
+                if (chars[left] != chars[right]) {
+                    flag = false;
+                    break;
+                }
+                left--;
+                right++;
+            }
+        } else {
+            right = left = length / 2;
+            while (left >= 0 && right <= length - 1) {
+                if (chars[left] != chars[right]) {
+                    flag = false;
+                    break;
+                }
+                left--;
+                right++;
+            }
+        }
+        return flag;
+    }
 
-        return true;
+    //    毫无疑问，上面的写法有亿些冗余和丑陋，所以我参考一下大佬们的写法，
+//    思想：反转一半数据，和前面一般数据作比较，这个效率会比较高，也可以选择直接反转全部数据，和原始数据作比较，这样代码简单一点
+//    但是效率不是很高
+    public boolean isPalindromeV3(int x) {
+        if (x < 0) return false;
+        int rev = 0, tmp,bef = x ;
+        while (x != 0) {
+            tmp = x % 10;
+            x = x / 10;
+            rev = rev * 10 + tmp;
+        }
+        return rev == bef;
     }
 }
