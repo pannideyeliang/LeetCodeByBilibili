@@ -7,7 +7,7 @@ package day1;
 public class q10 {
     //    10. 正则表达式匹配
     public static void main(String[] args) {
-        System.out.println(new Solution10().isMatch("abcd", "abc*"));
+        System.out.println(new Solution10().isMatchV2("", "a*b*c*"));
     }
 }
 
