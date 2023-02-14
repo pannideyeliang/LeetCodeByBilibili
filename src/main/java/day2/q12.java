@@ -17,7 +17,7 @@ class Solution12 {
     //    第一时间能想到的狗屎方法,采用模拟方法,参考大佬
     //    由于每一次都是从数字最大的位置进行匹配，所以我们很容易想到贪心算法
     public String intToRoman(int num) {
-        HashMap<Integer, String> map = new HashMap<>();
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
         int[] values = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
         String[] symbols = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
