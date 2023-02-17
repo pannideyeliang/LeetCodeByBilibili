@@ -9,7 +9,7 @@ public class q14 {
     //    14. 最长公共前缀
     public static void main(String[] args) {
         String[] strs = {"flower", "flow", "flight"};
-        System.out.println(new Solution14().longestCommonPrefix(strs));
+        System.out.println(new Solution14().longestCommonPrefixV2(strs));
 //        System.out.println(new Solution14().longestCommonPrefix("dasda",""));
 
     }
@@ -46,18 +46,25 @@ class Solution14 {
         int count = strs.length;
 //        同上，以第一个为参照物，从第二个开始不断寻找最大的前缀
         for (int i = 1; i < count; i++) {
-
+            if (prefix.length() > longestCommonPrefix(strs[i], strs[i - 1]).length()) {
+                prefix = longestCommonPrefix(strs[i], strs[i - 1]);
+            }
         }
-        return "";
+        return prefix;
     }
 
-//    寻找两个字符串之间的最大公共前缀
+    //    寻找两个字符串之间的最大公共前缀
     public String longestCommonPrefix(String str1, String str2) {
         for (int i = 0; i < str1.length(); i++) {
-            if (i == str2.length()||str1.charAt(i)!=str2.charAt(i)){
-                return str1.substring(0,i);
+            if (i == str2.length() || str1.charAt(i) != str2.charAt(i)) {
+                return str1.substring(0, i);
             }
         }
         return str1;
+    }
+
+    public String longestCommonPrefixV3(String[] strs) {
+
+        return "";
     }
 }
