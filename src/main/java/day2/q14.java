@@ -9,8 +9,9 @@ public class q14 {
     //    14. 最长公共前缀
     public static void main(String[] args) {
         String[] strs = {"flower", "flow", "flight"};
-        System.out.println(new Solution14().longestCommonPrefixV2(strs));
+//        System.out.println(new Solution14().longestCommonPrefixV2(strs));
 //        System.out.println(new Solution14().longestCommonPrefix("dasda",""));
+//        System.out.println(new Solution14().mergString("dasda","dasdasdada"));
 
     }
 
@@ -63,8 +64,28 @@ class Solution14 {
         return str1;
     }
 
+    //    由于该问题满足结合律，所以我们也可以采用分治法
     public String longestCommonPrefixV3(String[] strs) {
 
+
         return "";
+    }
+
+    //    切分子问题，分而治之
+    public String divString(String[] strs, int start, int end) {
+
+        return "";
+    }
+
+    //    合并子问题,其实就是寻找两个字符串的最长公共字前缀
+    public String mergString(String s1, String s2) {
+//        同上，以一个字符串为标准即可
+        int len1 = s1.length();
+        for (int i = 0; i < len1; i++) {
+            if (i == s2.length() || s1.charAt(i) != s2.charAt(i)) {
+                return s1.substring(0,i);
+            }
+        }
+        return s1;
     }
 }
