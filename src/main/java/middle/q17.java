@@ -1,9 +1,8 @@
 package middle;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public class q17 {
     //    17. 电话号码的字母组合
