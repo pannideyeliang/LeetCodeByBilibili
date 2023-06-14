@@ -31,4 +31,17 @@ class Solution119 {
 
         return res.get(rowIndex);
     }
+
+    //   因此我们可以倒着计算当前行，这样计算到第 i 项时，第 i−1 项仍然是上一行的值。
+    public List<Integer> getRow1(int rowIndex) {
+        List<Integer> row = new ArrayList<Integer>();
+        row.add(1);
+        for (int i = 1; i <= rowIndex; ++i) {
+            row.add(0);
+            for (int j = i; j > 0; --j) {
+                row.set(j, row.get(j) + row.get(j - 1));
+            }
+        }
+        return row;
+    }
 }
