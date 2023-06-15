@@ -11,7 +11,7 @@ public class q141 {
     }
 }
 
-public class Solution141 {
+class Solution141 {
     public boolean hasCycle(ListNode head) {
 
         return true;
