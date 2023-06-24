@@ -8,7 +8,7 @@ public class q206 {
 }
 
 
-class Solution {
+class Solution206 {
     //    基本功的考察
     public ListNode reverseList(ListNode head) {
         if (head == null) return null;
