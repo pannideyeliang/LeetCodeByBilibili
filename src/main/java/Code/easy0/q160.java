@@ -82,4 +82,8 @@ class ListNode {
         val = x;
         next = null;
     }
+
+    public ListNode() {
+
+    }
 }
