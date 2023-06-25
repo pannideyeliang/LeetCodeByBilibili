@@ -8,7 +8,7 @@ public class q226 {
 }
 
 
-class Solution {
+class Solution226 {
     //    简单递归
     public TreeNode invertTree(TreeNode root) {
         if (root == null || root.left == null && root.right == null) return root;
