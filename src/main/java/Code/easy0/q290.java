@@ -39,8 +39,8 @@ class Solution290 {
             return false;
         }
         Map<Object, Integer> map = new HashMap<>();
-        for (int i = 0; i < words.length; i++) {
-            if (!map.put(pattern.charAt(i), i).equals(map.put(words[i], i))) {
+        for (Integer i = 0; i < words.length; i++) {
+            if (map.put(pattern.charAt(i), i) != map.put(words[i], i)) {
                 return false;
             }
         }
