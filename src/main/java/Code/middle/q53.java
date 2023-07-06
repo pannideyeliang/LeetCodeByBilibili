@@ -26,5 +26,18 @@ class Solution53 {
         }
         return res;
     }
+
+    //    当然上述代码可以在过程中优化
+    public int maxSubArray1(int[] nums) {
+        int pre = nums[0];
+        pre = nums[0];
+        int max = pre;
+        for (int i = 1; i < nums.length; i++) {
+            pre = Math.max(pre + nums[i], nums[i]);
+            max = Math.max(max, pre);
+        }
+        return max;
+    }
+
 }
 
