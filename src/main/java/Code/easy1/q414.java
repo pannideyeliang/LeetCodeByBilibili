@@ -45,6 +45,7 @@ class Solution414 {
 
     public int thirdMax2(int[] nums) {
         long a = INF, b = INF, c = INF;
+//        不断更新最大值，次最大值，第三最大值
         for (int x : nums) {
             if (x > a) {
                 c = b;
