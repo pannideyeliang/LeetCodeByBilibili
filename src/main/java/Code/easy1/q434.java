@@ -6,7 +6,7 @@ public class q434 {
 
         String s = ", , , ,        a, eaefa";
         String[] s1 = s.split(" ");
-        for(String t:s1){
+        for (String t : s1) {
             System.out.println(t);
         }
 
@@ -26,5 +26,17 @@ class Solution434 {
             if (!t.equals("")) count++;
         }
         return count;
+    }
+
+    //    大佬代码，一次遍历
+    public int countSegments1(String s) {
+        int res = 0;
+        int n = s.length();
+        for (int i = 0; i < n; ) {
+            if (s.charAt(i) == ' ' && i++ >= 0) continue;
+            while (i < n && s.charAt(i) != ' ') i++;
+            res++;
+        }
+        return res;
     }
 }
