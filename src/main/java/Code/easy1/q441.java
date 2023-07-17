@@ -12,12 +12,14 @@ public class q441 {
 class Solution441 {
     //    贼简单
     public int arrangeCoins(int n) {
+        if (n ==1) return 1;
         int count = 1;
         int tmp = 0;
         while (tmp < n) {
             tmp += count;
             count++;
         }
-        return count - 2;
+
+        return tmp==n?count-1:count - 2;
     }
 }
