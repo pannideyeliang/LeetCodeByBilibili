@@ -33,10 +33,14 @@ class Solution434 {
         int res = 0;
         int n = s.length();
         for (int i = 0; i < n; ) {
-            if (s.charAt(i) == ' ' && i++ >= 0) continue;
+            if (s.charAt(i) == ' ') {
+                i++;
+                continue;
+            }
             while (i < n && s.charAt(i) != ' ') i++;
             res++;
         }
         return res;
     }
+//    也可以在s前面加一个“ ”，然后判断如果是 “ x”的形式则就是一个单词
 }
