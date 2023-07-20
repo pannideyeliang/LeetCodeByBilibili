@@ -50,4 +50,13 @@ class Solution476 {
 
     }
 
+//    大佬解法三 ，找到比num大的最近的一个2的幂，然后减一异或   11111111111
+    public int findComplement2(int num) {
+        long t = 1;  //t为比num大且最近的2的幂
+        while (t <= num) {
+            t <<= 1;
+        }
+        return (int) (num ^ (t-1));
+    }
+
 }
