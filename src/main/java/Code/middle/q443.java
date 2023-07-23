@@ -38,4 +38,26 @@ class Solution443 {
         }
         return res.length();
     }
+
+    //    查看大佬代码，使用java的双指针
+//    不需要count一个一个计数，只需要right - left +1既可
+    public int compress1(char[] chars) {
+        int left = 0, right = 0;
+        while (right < chars.length) {
+            int count = 0;
+            char tmp = chars[right];
+            while (right < chars.length && chars[right] == tmp) {
+                right++;
+                count++;
+            }
+            chars[left++] = tmp;
+            if (count != 1) {
+                char[] chs = (count + "").toCharArray();
+                for (char c : chs) {
+                    chars[left++] = c;
+                }
+            }
+        }
+        return left;
+    }
 }
