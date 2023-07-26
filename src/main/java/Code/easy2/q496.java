@@ -1,5 +1,8 @@
 package Code.easy2;
 
+import java.util.HashMap;
+import java.util.Stack;
+
 public class q496 {
     //    496. 下一个更大元素 I
     public static void main(String[] args) {
@@ -40,6 +43,21 @@ class Solution496 {
     //    大佬代码，实际上是一个单调栈的问题
 //    单调栈用途不太广泛，只处理一种典型的问题，叫做 Next Greater Element
     public int[] nextGreaterElement1(int[] nums1, int[] nums2) {
-        return null;
+        int len1 = nums1.length, len2 = nums2.length;
+        Stack<Integer> stack = new Stack<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = len2 - 1; i >= 0; i--) {
+            int x = nums2[i];
+            while (!stack.isEmpty() && x >= stack.peek()) {
+                stack.pop();
+            }
+            map.put(x, stack.isEmpty() ? -1 : stack.peek());
+            stack.push(x);
+        }
+        int[] res = new int[len1];
+        for (int i = 0; i < len1; i++) {
+            res[i] = map.get(nums1[i]);
+        }
+        return res;
     }
 }
