@@ -15,6 +15,7 @@ class Solution501 {
     //    注意到二叉树的中序遍历是非递减的，且相等的数一定是连续的
 //    但是注意需要处理的是如下：如果 count = max,则加入到res里面，
 //    如果更新了max，则前面的结果集都要清空掉
+//    base的值其实无所谓
     int count = 0, maxCount = 0, base = 0;
     ArrayList<Integer> res = new ArrayList<>();
 
