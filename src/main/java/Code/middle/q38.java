@@ -62,6 +62,7 @@ class Solution38 {
     }
 
     //    大佬版本，递归
+//    实际上是把迭代优化成递归，提高时间效率
     public String countAndSay2(int n) {
         if (n == 1) {
             return "1";
