@@ -38,8 +38,34 @@ class Solution46 {
                 boolean[] newUsed = new boolean[len];
                 System.arraycopy(used, 0, newUsed, 0, len);
                 newUsed[i] = true;
-                dfs(nums, len, depth+1, newpath, newUsed, res);
+                dfs(nums, len, depth + 1, newpath, newUsed, res);
             }
+        }
+    }
+
+    //    下面查看大佬的代码
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+
+    public List<List<Integer>> permute1(int[] nums) {
+        boolean used[] = new boolean[nums.length];
+        backtrack(nums, used);
+        return res;
+    }
+
+    public void backtrack(int nums[], boolean used[]) {
+        if (path.size() == nums.length) {
+            res.add(new ArrayList<>(path));
+            return;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (used[i]) continue;
+            path.add(nums[i]);
+            used[i] = true;
+            backtrack(nums, used);
+            path.remove(path.size() - 1);
+            used[i] = false;
         }
     }
 }
