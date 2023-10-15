@@ -73,6 +73,7 @@ public class DfsMap {
             }
 //            然后首在出队列
 //
+
             System.out.println("出队列" + deque.peekFirst());
             deque.remove();
         }
